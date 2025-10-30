@@ -3,32 +3,37 @@
 {
   "name": "Comments Section",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  "image": "mcr.microsoft.com/devcontainers/java:1-21-bookworm",
-  "features": {
-    "ghcr.io/devcontainers/features/github-cli:1": {},
-    "ghcr.io/devcontainers/features/java:1": {},
-    "ghcr.io/devcontainers/features/terraform:1": {},
-    "ghcr.io/devcontainers-extra/features/datadog-ci-cli:1": {},
-    "ghcr.io/devcontainers-extra/features/gradle-sdkman:2": {},
-    "ghcr.io/devcontainers-extra/features/jenkinsx-cli:1": {},
-    "ghcr.io/devcontainers-extra/features/jira-cli:1": {}
+  "build": {
+    "dockerfile": "Dockerfile"
   },
-
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "java.configuration.updateBuildConfiguration": "interactive",
+        "java.compile.nullAnalysis.mode": "automatic",
+        "java.format.settings.url": "https://raw.githubusercontent.com/google/google-java-format/master/eclipse-java-google-style.xml",
+        "java.format.settings.profile": "GoogleStyle",
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": null,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
+      }
+    }
+  },
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
   // "remoteUser": "root",
-
   "mounts": [
+    // mount local ssh certs
     "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,readonly"
   ],
-
-  "runArgs": ["--env-file", ".env"]
-
+  "runArgs": [
+    "--env-file",
+    ".env"
+  ]
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
-
   // Use 'postCreateCommand' to run commands after the container is created.
   // "postCreateCommand": "uname -a",
-
   // Configure tool-specific properties.
   // "customizations": {},
 }
