@@ -6,6 +6,9 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
+  "features": {
+    "ghcr.io/devcontainers-extra/features/jenkinsx-cli": {}
+  },
   "customizations": {
     "vscode": {
       "settings": {

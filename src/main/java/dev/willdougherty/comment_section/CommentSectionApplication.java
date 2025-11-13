@@ -11,3 +11,30 @@ public class CommentSectionApplication {
 	}
 
 }
+
+import java.util.ArrayList;
+public class MaxHeap {
+
+	// class attributes
+	private List<String> heap;
+	
+	// class methods
+	public MaxHeap() {
+		this.heap = new ArrayList();
+	}
+	public HeapifyUp() {
+		return
+	}
+	public HeapifyDown() {
+		return
+	}
+	public AddElement(String ele) {
+		return
+	}
+	public RemoveMax() {
+		return
+	}
+	public ReturnHeap() {
+		return this.heap
+	}
+}
