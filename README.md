@@ -31,6 +31,12 @@ Before I start setting up the pipeline, I need to create a development environme
 
 ### The CI Server
 
+I can run my Jenkins server locally, and run my integration and deployment pipeline from there. For simplicity, this is a public server, so I don't have to configure any ssh certs in the server. During integration with the remote repository, I run my tests using shell scripts and only push my changes if all tests pass. This ensures that code in the remote repository is always functional.
+
+### Deployment
+
+The Jenkins pipeline is useful in that I can integrate and deploy all at once with the click of a button. Once the code has been successfully commited to the remote repository, the pipeline runs the build script, **which for now pushes the output to the build folder.**
+
 ## Spring Boot
 
 ### Reference Documentation
